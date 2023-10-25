@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'jenkins-slave node' }
     environment {
         docker_pwd = credentials ('docker hub_jenkins_cred')
     }
