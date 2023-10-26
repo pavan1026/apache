@@ -4,7 +4,7 @@ pipeline {
         docker_pwd = credentials ('docker hub_jenkins_cred')
     }
     stages {
-        stage('Build') {
+        stage('Git-Checkout') {
             steps {
                 // Get some code from a GitHub repository
                git branch: 'main', url: 'https://github.com/pavan1026/apache.git'
