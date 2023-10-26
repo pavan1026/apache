@@ -1,7 +1,7 @@
-FROM ubuntu 
-RUN apt update 
-RUN apt install –y apache2 
-RUN apt install –y apache2-utils 
-RUN apt clean 
+FROM ubuntu:18.04  
+LABEL maintainer="contact@devopscube.com" 
+RUN  apt-get -y update && apt-get -y install nginx
+COPY files/default /etc/nginx/sites-available/default
+COPY files/index.html /usr/share/nginx/html/index.html
 EXPOSE 80
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
