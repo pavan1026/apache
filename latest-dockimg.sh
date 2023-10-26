@@ -6,4 +6,4 @@ tag=$(curl -s "https://registry.hub.docker.com/v2/repositories/8179554905/apache
 latest="$(docker run -d 8179554905/apache:$tag)"
 echo $latest
 
-sed -i 's/python1.2/$latest/g' ./deploy.yml
+#sed -i 's/python1.2/$latest/g' ./deploy.yml
